@@ -1353,3 +1353,18 @@ void free_image(image m)
         free(m.data);
     }
 }
+
+image char_ptr_image(unsigned char* data, int h, int w, int c, int step)
+{
+    image out = make_image(w, h, c);
+    int i, j, k, count=0;;
+
+    for(k= 0; k < c; ++k){
+        for(i = 0; i < h; ++i){
+            for(j = 0; j < w; ++j){
+                out.data[count++] = data[i*step + j*c + k]/255.;
+            }
+        }
+    }
+    return out;
+}

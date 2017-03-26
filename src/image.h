@@ -83,5 +83,6 @@ image get_image_layer(image m, int l);
 
 void free_image(image m);
 void test_resize(char *filename);
+image char_ptr_image(unsigned char* data, int h, int w, int c, int step);
 #endif
 
